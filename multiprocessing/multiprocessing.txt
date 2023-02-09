@@ -1,0 +1,1900 @@
+Script started on 2023-02-09 10:11:08+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="77" LINES="17"]
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 0_procesos.p y
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ py [K[K[Kpython3 0_procesos.py <[K> 0_procesos.txt
+[?2004l  File "/home/alumno/Descargas/practicas-prpa/multiprocessing/0_procesos.py", line 10
+    print ("hola", i)
+    ^
+IndentationError: expected an indented block after 'for' statement on line 9
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat[K[K[Kemacs 0_procesos.p y &
+[?2004l[1] 16532
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 0_procesos.py
+[?2004lfrom time import sleep
+from random import random
+"""
+DocumentaciÃ³n multiprocessing
+https://docs.python.org/3.6/library/multiprocessing.html
+"""
+from multiprocessing import Process
+def f():
+ for i in range(5):
+  print ("hola", i)
+  sleep(random())
+if __name__ == "__main__":
+ p = Process(target=f)
+ q = Process(target=f)
+ p.start()
+ q.start()
+ print ("fin")
+[1]+  Hecho                   emacs 0_procesos.py
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 0_procesos.py[K[Ktxt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kemacs 0_procesos.py &[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ python3 0_procesos.py > 0_procesos.txt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ python3 0_procesos.py > 0_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cemacs 0_procesos.py &[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 0_procesos.py > 0_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat 0_procesos.txt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+[?2004lfin
+hola 0
+hola 1
+hola 2
+hola 3
+hola 4
+hola 0
+hola 1
+hola 2
+hola 3
+hola 4
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git[K[K[Kcat 0_procesos.txt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 0_procesos.py > 0_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cemacs 0_procesos.py &[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.py [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P.py
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P.py[1P.py[1P.py[1P.py[1P.py[1P.py[1P.py[1P.py1.py_.pyp.pyr.pyo.pye.py[1P.pyc.pye.pys.pyo.py [A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cemacs 1_procesos.py
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ l[Kpython3 1_procesos.py > 1_procesos.tct[K[Kxt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 1_procesos.py
+[?2004limport time
+import random
+
+from multiprocessing import Process
+
+def f(value):
+    for i in range(3):
+        print (f"hola soy {value} vuelta {i}")
+        time.sleep(random.random()/3)
+def g():
+    print ("adios")
+
+if __name__ == "__main__":
+    N = 10
+    lp = []
+    for i in range(N):
+        lp.append(Process(target=f,args=(f"ana {i}",)))
+    for p in lp:
+        p.start()
+    q = Process(target=g)
+    q.start()
+    print ("fin")
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 1_procesos.py[C[K[Ktxt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+[?2004lfin
+adios
+hola soy ana 9 vuelta 0
+hola soy ana 9 vuelta 1
+hola soy ana 9 vuelta 2
+hola soy ana 7 vuelta 0
+hola soy ana 7 vuelta 1
+hola soy ana 7 vuelta 2
+hola soy ana 1 vuelta 0
+hola soy ana 1 vuelta 1
+hola soy ana 1 vuelta 2
+hola soy ana 8 vuelta 0
+hola soy ana 8 vuelta 1
+hola soy ana 8 vuelta 2
+hola soy ana 4 vuelta 0
+hola soy ana 4 vuelta 1
+hola soy ana 4 vuelta 2
+hola soy ana 0 vuelta 0
+hola soy ana 0 vuelta 1
+hola soy ana 0 vuelta 2
+hola soy ana 6 vuelta 0
+hola soy ana 6 vuelta 1
+hola soy ana 6 vuelta 2
+hola soy ana 2 vuelta 0
+hola soy ana 2 vuelta 1
+hola soy ana 2 vuelta 2
+hola soy ana 5 vuelta 0
+hola soy ana 5 vuelta 1
+hola soy ana 5 vuelta 2
+hola soy ana 3 vuelta 0
+hola soy ana 3 vuelta 1
+hola soy ana 3 vuelta 2
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 2_procesos.p y
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 2_procesos.py[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C 2_procesos.py [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P 2_procesos.py
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P 2_procesos.py[1P 2_procesos.py[1P 2_procesos.pyp 2_procesos.pyy 2_procesos.pyt 2_procesos.pyh 2_procesos.py [A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[Co 2_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[Cn 2_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C3 2_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 2_procesos.py > 2_procesos.txt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 2_procesos.py
+[?2004limport time
+import random
+
+from multiprocessing import Process
+from multiprocessing import current_process
+
+def f():
+    for i in range(5):
+        print (f"hola soy {current_process().name}, " + \
+               f"{current_process().pid}, {current_process().is_alive()}, vuelta {i}")
+        time.sleep(random.random()/3)
+
+def g():
+    print ("adios")
+
+if __name__ == "__main__":
+    N = 3
+    lp = []
+    for i in range(N):
+        lp.append(Process(target=f, name=f"ana_{i}"))
+    for p in lp:
+        p.start()
+    q = Process(target=g)
+    q.start()
+    print ("fin")
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 2_procesos.py[K[Ktxt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+[?2004lfin
+adios
+hola soy ana_2, 16639, True, vuelta 0
+hola soy ana_2, 16639, True, vuelta 1
+hola soy ana_2, 16639, True, vuelta 2
+hola soy ana_2, 16639, True, vuelta 3
+hola soy ana_2, 16639, True, vuelta 4
+hola soy ana_0, 16637, True, vuelta 0
+hola soy ana_0, 16637, True, vuelta 1
+hola soy ana_0, 16637, True, vuelta 2
+hola soy ana_0, 16637, True, vuelta 3
+hola soy ana_0, 16637, True, vuelta 4
+hola soy ana_1, 16638, True, vuelta 0
+hola soy ana_1, 16638, True, vuelta 1
+hola soy ana_1, 16638, True, vuelta 2
+hola soy ana_1, 16638, True, vuelta 3
+hola soy ana_1, 16638, True, vuelta 4
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 2[K3_procesos.p y
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 3_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 2_procesos.txt [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Ppy
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 2_procesos.py > 2_procesos.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_procesos.p[1P[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C3_procesos.[1@p[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[1P_procesos.txt[C[C[C[C[C[C3_procesos.txt[C[C[C[C[C[C[C
+[?2004l  File "/home/alumno/Descargas/practicas-prpa/multiprocessing/3_procesos.py", line 16
+    c = Value(’i’, 0)
+              ^
+SyntaxError: invalid character '’' (U+2019)
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 3_procesos.p y &
+[?2004l[1] 16677
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 3_procesos.py
+[?2004lfrom multiprocessing import Process
+from multiprocessing import current_process
+from multiprocessing import Value
+import time
+
+def f(c):
+    for i in range(100):
+        temp = c.value + 1
+        print (f"hola soy {current_process().pid}, vuelta: {i}, contador: {c.value}")
+        time.sleep(0.1)
+        c.value = temp
+        
+if __name__ == "__main__":
+    N = 8
+    lp = []
+    c = Value('i', 0)
+    for i in range(N):
+        lp.append(Process(target=f, args=(c,)))
+    print ("Valor inicial del contador", c.value)
+    for p in lp:
+        p.start()
+[1]+  Hecho                   emacs 3_procesos.py
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 3_procesos.py[K[Ktxt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cemacs 3_procesos.py &[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ python3 3_procesos.py > 3_procesos.txt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ a[K]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ a[K]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ a[K]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ a[Kcat 3_procesos.txt
+[?2004lValor inicial del contador 0
+hola soy 16693, vuelta: 0, contador: 0
+hola soy 16693, vuelta: 1, contador: 1
+hola soy 16693, vuelta: 2, contador: 2
+hola soy 16693, vuelta: 3, contador: 3
+hola soy 16693, vuelta: 4, contador: 4
+hola soy 16693, vuelta: 5, contador: 5
+hola soy 16693, vuelta: 6, contador: 6
+hola soy 16693, vuelta: 7, contador: 7
+hola soy 16693, vuelta: 8, contador: 8
+hola soy 16693, vuelta: 9, contador: 9
+hola soy 16693, vuelta: 10, contador: 10
+hola soy 16693, vuelta: 11, contador: 11
+hola soy 16693, vuelta: 12, contador: 12
+hola soy 16693, vuelta: 13, contador: 13
+hola soy 16693, vuelta: 14, contador: 14
+hola soy 16693, vuelta: 15, contador: 15
+hola soy 16693, vuelta: 16, contador: 16
+hola soy 16693, vuelta: 17, contador: 17
+hola soy 16693, vuelta: 18, contador: 18
+hola soy 16693, vuelta: 19, contador: 19
+hola soy 16693, vuelta: 20, contador: 20
+hola soy 16693, vuelta: 21, contador: 21
+hola soy 16693, vuelta: 22, contador: 22
+hola soy 16693, vuelta: 23, contador: 23
+hola soy 16693, vuelta: 24, contador: 24
+hola soy 16693, vuelta: 25, contador: 25
+hola soy 16693, vuelta: 26, contador: 26
+hola soy 16693, vuelta: 27, contador: 27
+hola soy 16693, vuelta: 28, contador: 28
+hola soy 16693, vuelta: 29, contador: 29
+hola soy 16693, vuelta: 30, contador: 30
+hola soy 16693, vuelta: 31, contador: 31
+hola soy 16693, vuelta: 32, contador: 32
+hola soy 16693, vuelta: 33, contador: 33
+hola soy 16693, vuelta: 34, contador: 34
+hola soy 16693, vuelta: 35, contador: 35
+hola soy 16693, vuelta: 36, contador: 36
+hola soy 16693, vuelta: 37, contador: 37
+hola soy 16693, vuelta: 38, contador: 38
+hola soy 16693, vuelta: 39, contador: 39
+hola soy 16693, vuelta: 40, contador: 40
+hola soy 16693, vuelta: 41, contador: 41
+hola soy 16693, vuelta: 42, contador: 42
+hola soy 16693, vuelta: 43, contador: 43
+hola soy 16693, vuelta: 44, contador: 44
+hola soy 16693, vuelta: 45, contador: 45
+hola soy 16693, vuelta: 46, contador: 46
+hola soy 16693, vuelta: 47, contador: 47
+hola soy 16693, vuelta: 48, contador: 48
+hola soy 16693, vuelta: 49, contador: 49
+hola soy 16693, vuelta: 50, contador: 50
+hola soy 16693, vuelta: 51, contador: 51
+hola soy 16693, vuelta: 52, contador: 52
+hola soy 16693, vuelta: 53, contador: 53
+hola soy 16693, vuelta: 54, contador: 54
+hola soy 16693, vuelta: 55, contador: 55
+hola soy 16693, vuelta: 56, contador: 56
+hola soy 16693, vuelta: 57, contador: 57
+hola soy 16693, vuelta: 58, contador: 58
+hola soy 16693, vuelta: 59, contador: 59
+hola soy 16693, vuelta: 60, contador: 60
+hola soy 16693, vuelta: 61, contador: 61
+hola soy 16693, vuelta: 62, contador: 62
+hola soy 16693, vuelta: 63, contador: 63
+hola soy 16693, vuelta: 64, contador: 64
+hola soy 16693, vuelta: 65, contador: 65
+hola soy 16693, vuelta: 66, contador: 66
+hola soy 16693, vuelta: 67, contador: 67
+hola soy 16693, vuelta: 68, contador: 68
+hola soy 16693, vuelta: 69, contador: 69
+hola soy 16693, vuelta: 70, contador: 70
+hola soy 16693, vuelta: 71, contador: 71
+hola soy 16693, vuelta: 72, contador: 72
+hola soy 16693, vuelta: 73, contador: 73
+hola soy 16693, vuelta: 74, contador: 74
+hola soy 16693, vuelta: 75, contador: 75
+hola soy 16693, vuelta: 76, contador: 76
+hola soy 16693, vuelta: 77, contador: 77
+hola soy 16693, vuelta: 78, contador: 78
+hola soy 16693, vuelta: 79, contador: 79
+hola soy 16693, vuelta: 80, contador: 80
+hola soy 16693, vuelta: 81, contador: 81
+hola soy 16693, vuelta: 82, contador: 82
+hola soy 16693, vuelta: 83, contador: 83
+hola soy 16693, vuelta: 84, contador: 84
+hola soy 16693, vuelta: 85, contador: 85
+hola soy 16693, vuelta: 86, contador: 86
+hola soy 16693, vuelta: 87, contador: 87
+hola soy 16693, vuelta: 88, contador: 88
+hola soy 16693, vuelta: 89, contador: 89
+hola soy 16693, vuelta: 90, contador: 90
+hola soy 16693, vuelta: 91, contador: 91
+hola soy 16693, vuelta: 92, contador: 92
+hola soy 16693, vuelta: 93, contador: 93
+hola soy 16693, vuelta: 94, contador: 94
+hola soy 16693, vuelta: 95, contador: 95
+hola soy 16693, vuelta: 96, contador: 96
+hola soy 16693, vuelta: 97, contador: 97
+hola soy 16693, vuelta: 98, contador: 98
+hola soy 16693, vuelta: 99, contador: 99
+hola soy 16694, vuelta: 0, contador: 0
+hola soy 16694, vuelta: 1, contador: 1
+hola soy 16694, vuelta: 2, contador: 2
+hola soy 16694, vuelta: 3, contador: 3
+hola soy 16694, vuelta: 4, contador: 4
+hola soy 16694, vuelta: 5, contador: 5
+hola soy 16694, vuelta: 6, contador: 6
+hola soy 16694, vuelta: 7, contador: 7
+hola soy 16694, vuelta: 8, contador: 8
+hola soy 16694, vuelta: 9, contador: 9
+hola soy 16694, vuelta: 10, contador: 10
+hola soy 16694, vuelta: 11, contador: 11
+hola soy 16694, vuelta: 12, contador: 12
+hola soy 16694, vuelta: 13, contador: 13
+hola soy 16694, vuelta: 14, contador: 14
+hola soy 16694, vuelta: 15, contador: 15
+hola soy 16694, vuelta: 16, contador: 16
+hola soy 16694, vuelta: 17, contador: 17
+hola soy 16694, vuelta: 18, contador: 18
+hola soy 16694, vuelta: 19, contador: 19
+hola soy 16694, vuelta: 20, contador: 20
+hola soy 16694, vuelta: 21, contador: 21
+hola soy 16694, vuelta: 22, contador: 22
+hola soy 16694, vuelta: 23, contador: 23
+hola soy 16694, vuelta: 24, contador: 24
+hola soy 16694, vuelta: 25, contador: 25
+hola soy 16694, vuelta: 26, contador: 26
+hola soy 16694, vuelta: 27, contador: 27
+hola soy 16694, vuelta: 28, contador: 28
+hola soy 16694, vuelta: 29, contador: 29
+hola soy 16694, vuelta: 30, contador: 30
+hola soy 16694, vuelta: 31, contador: 31
+hola soy 16694, vuelta: 32, contador: 32
+hola soy 16694, vuelta: 33, contador: 33
+hola soy 16694, vuelta: 34, contador: 34
+hola soy 16694, vuelta: 35, contador: 35
+hola soy 16694, vuelta: 36, contador: 36
+hola soy 16694, vuelta: 37, contador: 37
+hola soy 16694, vuelta: 38, contador: 38
+hola soy 16694, vuelta: 39, contador: 39
+hola soy 16694, vuelta: 40, contador: 40
+hola soy 16694, vuelta: 41, contador: 41
+hola soy 16694, vuelta: 42, contador: 42
+hola soy 16694, vuelta: 43, contador: 43
+hola soy 16694, vuelta: 44, contador: 44
+hola soy 16694, vuelta: 45, contador: 45
+hola soy 16694, vuelta: 46, contador: 46
+hola soy 16694, vuelta: 47, contador: 47
+hola soy 16694, vuelta: 48, contador: 48
+hola soy 16694, vuelta: 49, contador: 49
+hola soy 16694, vuelta: 50, contador: 50
+hola soy 16694, vuelta: 51, contador: 51
+hola soy 16694, vuelta: 52, contador: 52
+hola soy 16694, vuelta: 53, contador: 53
+hola soy 16694, vuelta: 54, contador: 54
+hola soy 16694, vuelta: 55, contador: 55
+hola soy 16694, vuelta: 56, contador: 56
+hola soy 16694, vuelta: 57, contador: 57
+hola soy 16694, vuelta: 58, contador: 58
+hola soy 16694, vuelta: 59, contador: 59
+hola soy 16694, vuelta: 60, contador: 60
+hola soy 16694, vuelta: 61, contador: 61
+hola soy 16694, vuelta: 62, contador: 62
+hola soy 16694, vuelta: 63, contador: 63
+hola soy 16694, vuelta: 64, contador: 64
+hola soy 16694, vuelta: 65, contador: 65
+hola soy 16694, vuelta: 66, contador: 66
+hola soy 16694, vuelta: 67, contador: 67
+hola soy 16694, vuelta: 68, contador: 68
+hola soy 16694, vuelta: 69, contador: 69
+hola soy 16694, vuelta: 70, contador: 70
+hola soy 16694, vuelta: 71, contador: 71
+hola soy 16694, vuelta: 72, contador: 72
+hola soy 16694, vuelta: 73, contador: 73
+hola soy 16694, vuelta: 74, contador: 74
+hola soy 16694, vuelta: 75, contador: 75
+hola soy 16694, vuelta: 76, contador: 76
+hola soy 16694, vuelta: 77, contador: 77
+hola soy 16694, vuelta: 78, contador: 78
+hola soy 16694, vuelta: 79, contador: 79
+hola soy 16694, vuelta: 80, contador: 80
+hola soy 16694, vuelta: 81, contador: 81
+hola soy 16694, vuelta: 82, contador: 82
+hola soy 16694, vuelta: 83, contador: 83
+hola soy 16694, vuelta: 84, contador: 84
+hola soy 16694, vuelta: 85, contador: 85
+hola soy 16694, vuelta: 86, contador: 86
+hola soy 16694, vuelta: 87, contador: 87
+hola soy 16694, vuelta: 88, contador: 88
+hola soy 16694, vuelta: 89, contador: 89
+hola soy 16694, vuelta: 90, contador: 90
+hola soy 16694, vuelta: 91, contador: 91
+hola soy 16694, vuelta: 92, contador: 92
+hola soy 16694, vuelta: 93, contador: 93
+hola soy 16694, vuelta: 94, contador: 94
+hola soy 16694, vuelta: 95, contador: 95
+hola soy 16694, vuelta: 96, contador: 96
+hola soy 16694, vuelta: 97, contador: 97
+hola soy 16694, vuelta: 98, contador: 98
+hola soy 16694, vuelta: 99, contador: 99
+hola soy 16696, vuelta: 0, contador: 0
+hola soy 16696, vuelta: 1, contador: 1
+hola soy 16696, vuelta: 2, contador: 2
+hola soy 16696, vuelta: 3, contador: 3
+hola soy 16696, vuelta: 4, contador: 4
+hola soy 16696, vuelta: 5, contador: 5
+hola soy 16696, vuelta: 6, contador: 6
+hola soy 16696, vuelta: 7, contador: 7
+hola soy 16696, vuelta: 8, contador: 8
+hola soy 16696, vuelta: 9, contador: 9
+hola soy 16696, vuelta: 10, contador: 10
+hola soy 16696, vuelta: 11, contador: 11
+hola soy 16696, vuelta: 12, contador: 12
+hola soy 16696, vuelta: 13, contador: 13
+hola soy 16696, vuelta: 14, contador: 14
+hola soy 16696, vuelta: 15, contador: 15
+hola soy 16696, vuelta: 16, contador: 16
+hola soy 16696, vuelta: 17, contador: 17
+hola soy 16696, vuelta: 18, contador: 18
+hola soy 16696, vuelta: 19, contador: 19
+hola soy 16696, vuelta: 20, contador: 20
+hola soy 16696, vuelta: 21, contador: 21
+hola soy 16696, vuelta: 22, contador: 22
+hola soy 16696, vuelta: 23, contador: 23
+hola soy 16696, vuelta: 24, contador: 24
+hola soy 16696, vuelta: 25, contador: 25
+hola soy 16696, vuelta: 26, contador: 26
+hola soy 16696, vuelta: 27, contador: 27
+hola soy 16696, vuelta: 28, contador: 28
+hola soy 16696, vuelta: 29, contador: 29
+hola soy 16696, vuelta: 30, contador: 30
+hola soy 16696, vuelta: 31, contador: 31
+hola soy 16696, vuelta: 32, contador: 32
+hola soy 16696, vuelta: 33, contador: 33
+hola soy 16696, vuelta: 34, contador: 34
+hola soy 16696, vuelta: 35, contador: 35
+hola soy 16696, vuelta: 36, contador: 36
+hola soy 16696, vuelta: 37, contador: 37
+hola soy 16696, vuelta: 38, contador: 38
+hola soy 16696, vuelta: 39, contador: 39
+hola soy 16696, vuelta: 40, contador: 40
+hola soy 16696, vuelta: 41, contador: 41
+hola soy 16696, vuelta: 42, contador: 42
+hola soy 16696, vuelta: 43, contador: 43
+hola soy 16696, vuelta: 44, contador: 44
+hola soy 16696, vuelta: 45, contador: 45
+hola soy 16696, vuelta: 46, contador: 46
+hola soy 16696, vuelta: 47, contador: 47
+hola soy 16696, vuelta: 48, contador: 48
+hola soy 16696, vuelta: 49, contador: 49
+hola soy 16696, vuelta: 50, contador: 50
+hola soy 16696, vuelta: 51, contador: 51
+hola soy 16696, vuelta: 52, contador: 52
+hola soy 16696, vuelta: 53, contador: 53
+hola soy 16696, vuelta: 54, contador: 54
+hola soy 16696, vuelta: 55, contador: 55
+hola soy 16696, vuelta: 56, contador: 56
+hola soy 16696, vuelta: 57, contador: 57
+hola soy 16696, vuelta: 58, contador: 58
+hola soy 16696, vuelta: 59, contador: 59
+hola soy 16696, vuelta: 60, contador: 60
+hola soy 16696, vuelta: 61, contador: 61
+hola soy 16696, vuelta: 62, contador: 62
+hola soy 16696, vuelta: 63, contador: 63
+hola soy 16696, vuelta: 64, contador: 64
+hola soy 16696, vuelta: 65, contador: 65
+hola soy 16696, vuelta: 66, contador: 66
+hola soy 16696, vuelta: 67, contador: 67
+hola soy 16696, vuelta: 68, contador: 68
+hola soy 16696, vuelta: 69, contador: 69
+hola soy 16696, vuelta: 70, contador: 70
+hola soy 16696, vuelta: 71, contador: 71
+hola soy 16696, vuelta: 72, contador: 72
+hola soy 16696, vuelta: 73, contador: 73
+hola soy 16696, vuelta: 74, contador: 74
+hola soy 16696, vuelta: 75, contador: 75
+hola soy 16696, vuelta: 76, contador: 76
+hola soy 16696, vuelta: 77, contador: 77
+hola soy 16696, vuelta: 78, contador: 78
+hola soy 16696, vuelta: 79, contador: 79
+hola soy 16696, vuelta: 80, contador: 80
+hola soy 16696, vuelta: 81, contador: 81
+hola soy 16696, vuelta: 82, contador: 82
+hola soy 16696, vuelta: 83, contador: 83
+hola soy 16696, vuelta: 84, contador: 84
+hola soy 16696, vuelta: 85, contador: 85
+hola soy 16696, vuelta: 86, contador: 86
+hola soy 16696, vuelta: 87, contador: 87
+hola soy 16696, vuelta: 88, contador: 88
+hola soy 16696, vuelta: 89, contador: 89
+hola soy 16696, vuelta: 90, contador: 90
+hola soy 16696, vuelta: 91, contador: 91
+hola soy 16696, vuelta: 92, contador: 92
+hola soy 16696, vuelta: 93, contador: 93
+hola soy 16696, vuelta: 94, contador: 94
+hola soy 16696, vuelta: 95, contador: 95
+hola soy 16696, vuelta: 96, contador: 96
+hola soy 16696, vuelta: 97, contador: 97
+hola soy 16696, vuelta: 98, contador: 98
+hola soy 16696, vuelta: 99, contador: 99
+hola soy 16695, vuelta: 0, contador: 0
+hola soy 16695, vuelta: 1, contador: 1
+hola soy 16695, vuelta: 2, contador: 2
+hola soy 16695, vuelta: 3, contador: 3
+hola soy 16695, vuelta: 4, contador: 4
+hola soy 16695, vuelta: 5, contador: 5
+hola soy 16695, vuelta: 6, contador: 6
+hola soy 16695, vuelta: 7, contador: 7
+hola soy 16695, vuelta: 8, contador: 8
+hola soy 16695, vuelta: 9, contador: 9
+hola soy 16695, vuelta: 10, contador: 10
+hola soy 16695, vuelta: 11, contador: 11
+hola soy 16695, vuelta: 12, contador: 12
+hola soy 16695, vuelta: 13, contador: 13
+hola soy 16695, vuelta: 14, contador: 14
+hola soy 16695, vuelta: 15, contador: 15
+hola soy 16695, vuelta: 16, contador: 16
+hola soy 16695, vuelta: 17, contador: 17
+hola soy 16695, vuelta: 18, contador: 18
+hola soy 16695, vuelta: 19, contador: 19
+hola soy 16695, vuelta: 20, contador: 20
+hola soy 16695, vuelta: 21, contador: 21
+hola soy 16695, vuelta: 22, contador: 22
+hola soy 16695, vuelta: 23, contador: 23
+hola soy 16695, vuelta: 24, contador: 24
+hola soy 16695, vuelta: 25, contador: 25
+hola soy 16695, vuelta: 26, contador: 26
+hola soy 16695, vuelta: 27, contador: 27
+hola soy 16695, vuelta: 28, contador: 28
+hola soy 16695, vuelta: 29, contador: 29
+hola soy 16695, vuelta: 30, contador: 30
+hola soy 16695, vuelta: 31, contador: 31
+hola soy 16695, vuelta: 32, contador: 32
+hola soy 16695, vuelta: 33, contador: 33
+hola soy 16695, vuelta: 34, contador: 34
+hola soy 16695, vuelta: 35, contador: 35
+hola soy 16695, vuelta: 36, contador: 36
+hola soy 16695, vuelta: 37, contador: 37
+hola soy 16695, vuelta: 38, contador: 38
+hola soy 16695, vuelta: 39, contador: 39
+hola soy 16695, vuelta: 40, contador: 40
+hola soy 16695, vuelta: 41, contador: 41
+hola soy 16695, vuelta: 42, contador: 42
+hola soy 16695, vuelta: 43, contador: 43
+hola soy 16695, vuelta: 44, contador: 44
+hola soy 16695, vuelta: 45, contador: 45
+hola soy 16695, vuelta: 46, contador: 46
+hola soy 16695, vuelta: 47, contador: 47
+hola soy 16695, vuelta: 48, contador: 48
+hola soy 16695, vuelta: 49, contador: 49
+hola soy 16695, vuelta: 50, contador: 50
+hola soy 16695, vuelta: 51, contador: 51
+hola soy 16695, vuelta: 52, contador: 52
+hola soy 16695, vuelta: 53, contador: 53
+hola soy 16695, vuelta: 54, contador: 54
+hola soy 16695, vuelta: 55, contador: 55
+hola soy 16695, vuelta: 56, contador: 56
+hola soy 16695, vuelta: 57, contador: 57
+hola soy 16695, vuelta: 58, contador: 58
+hola soy 16695, vuelta: 59, contador: 59
+hola soy 16695, vuelta: 60, contador: 60
+hola soy 16695, vuelta: 61, contador: 61
+hola soy 16695, vuelta: 62, contador: 62
+hola soy 16695, vuelta: 63, contador: 63
+hola soy 16695, vuelta: 64, contador: 64
+hola soy 16695, vuelta: 65, contador: 65
+hola soy 16695, vuelta: 66, contador: 66
+hola soy 16695, vuelta: 67, contador: 67
+hola soy 16695, vuelta: 68, contador: 68
+hola soy 16695, vuelta: 69, contador: 69
+hola soy 16695, vuelta: 70, contador: 70
+hola soy 16695, vuelta: 71, contador: 71
+hola soy 16695, vuelta: 72, contador: 72
+hola soy 16695, vuelta: 73, contador: 73
+hola soy 16695, vuelta: 74, contador: 74
+hola soy 16695, vuelta: 75, contador: 75
+hola soy 16695, vuelta: 76, contador: 76
+hola soy 16695, vuelta: 77, contador: 77
+hola soy 16695, vuelta: 78, contador: 78
+hola soy 16695, vuelta: 79, contador: 79
+hola soy 16695, vuelta: 80, contador: 80
+hola soy 16695, vuelta: 81, contador: 81
+hola soy 16695, vuelta: 82, contador: 82
+hola soy 16695, vuelta: 83, contador: 83
+hola soy 16695, vuelta: 84, contador: 84
+hola soy 16695, vuelta: 85, contador: 85
+hola soy 16695, vuelta: 86, contador: 86
+hola soy 16695, vuelta: 87, contador: 87
+hola soy 16695, vuelta: 88, contador: 88
+hola soy 16695, vuelta: 89, contador: 89
+hola soy 16695, vuelta: 90, contador: 90
+hola soy 16695, vuelta: 91, contador: 91
+hola soy 16695, vuelta: 92, contador: 92
+hola soy 16695, vuelta: 93, contador: 93
+hola soy 16695, vuelta: 94, contador: 94
+hola soy 16695, vuelta: 95, contador: 95
+hola soy 16695, vuelta: 96, contador: 96
+hola soy 16695, vuelta: 97, contador: 97
+hola soy 16695, vuelta: 98, contador: 98
+hola soy 16695, vuelta: 99, contador: 99
+hola soy 16698, vuelta: 0, contador: 0
+hola soy 16698, vuelta: 1, contador: 1
+hola soy 16698, vuelta: 2, contador: 2
+hola soy 16698, vuelta: 3, contador: 3
+hola soy 16698, vuelta: 4, contador: 4
+hola soy 16698, vuelta: 5, contador: 5
+hola soy 16698, vuelta: 6, contador: 6
+hola soy 16698, vuelta: 7, contador: 7
+hola soy 16698, vuelta: 8, contador: 8
+hola soy 16698, vuelta: 9, contador: 9
+hola soy 16698, vuelta: 10, contador: 10
+hola soy 16698, vuelta: 11, contador: 11
+hola soy 16698, vuelta: 12, contador: 12
+hola soy 16698, vuelta: 13, contador: 13
+hola soy 16698, vuelta: 14, contador: 14
+hola soy 16698, vuelta: 15, contador: 15
+hola soy 16698, vuelta: 16, contador: 16
+hola soy 16698, vuelta: 17, contador: 17
+hola soy 16698, vuelta: 18, contador: 18
+hola soy 16698, vuelta: 19, contador: 19
+hola soy 16698, vuelta: 20, contador: 20
+hola soy 16698, vuelta: 21, contador: 21
+hola soy 16698, vuelta: 22, contador: 22
+hola soy 16698, vuelta: 23, contador: 23
+hola soy 16698, vuelta: 24, contador: 24
+hola soy 16698, vuelta: 25, contador: 25
+hola soy 16698, vuelta: 26, contador: 26
+hola soy 16698, vuelta: 27, contador: 27
+hola soy 16698, vuelta: 28, contador: 28
+hola soy 16698, vuelta: 29, contador: 29
+hola soy 16698, vuelta: 30, contador: 30
+hola soy 16698, vuelta: 31, contador: 31
+hola soy 16698, vuelta: 32, contador: 32
+hola soy 16698, vuelta: 33, contador: 33
+hola soy 16698, vuelta: 34, contador: 34
+hola soy 16698, vuelta: 35, contador: 35
+hola soy 16698, vuelta: 36, contador: 36
+hola soy 16698, vuelta: 37, contador: 37
+hola soy 16698, vuelta: 38, contador: 38
+hola soy 16698, vuelta: 39, contador: 39
+hola soy 16698, vuelta: 40, contador: 40
+hola soy 16698, vuelta: 41, contador: 41
+hola soy 16698, vuelta: 42, contador: 42
+hola soy 16698, vuelta: 43, contador: 43
+hola soy 16698, vuelta: 44, contador: 44
+hola soy 16698, vuelta: 45, contador: 45
+hola soy 16698, vuelta: 46, contador: 46
+hola soy 16698, vuelta: 47, contador: 47
+hola soy 16698, vuelta: 48, contador: 48
+hola soy 16698, vuelta: 49, contador: 49
+hola soy 16698, vuelta: 50, contador: 50
+hola soy 16698, vuelta: 51, contador: 51
+hola soy 16698, vuelta: 52, contador: 52
+hola soy 16698, vuelta: 53, contador: 53
+hola soy 16698, vuelta: 54, contador: 54
+hola soy 16698, vuelta: 55, contador: 55
+hola soy 16698, vuelta: 56, contador: 56
+hola soy 16698, vuelta: 57, contador: 57
+hola soy 16698, vuelta: 58, contador: 58
+hola soy 16698, vuelta: 59, contador: 59
+hola soy 16698, vuelta: 60, contador: 60
+hola soy 16698, vuelta: 61, contador: 61
+hola soy 16698, vuelta: 62, contador: 62
+hola soy 16698, vuelta: 63, contador: 63
+hola soy 16698, vuelta: 64, contador: 64
+hola soy 16698, vuelta: 65, contador: 65
+hola soy 16698, vuelta: 66, contador: 66
+hola soy 16698, vuelta: 67, contador: 67
+hola soy 16698, vuelta: 68, contador: 68
+hola soy 16698, vuelta: 69, contador: 69
+hola soy 16698, vuelta: 70, contador: 70
+hola soy 16698, vuelta: 71, contador: 71
+hola soy 16698, vuelta: 72, contador: 72
+hola soy 16698, vuelta: 73, contador: 73
+hola soy 16698, vuelta: 74, contador: 74
+hola soy 16698, vuelta: 75, contador: 75
+hola soy 16698, vuelta: 76, contador: 76
+hola soy 16698, vuelta: 77, contador: 77
+hola soy 16698, vuelta: 78, contador: 78
+hola soy 16698, vuelta: 79, contador: 79
+hola soy 16698, vuelta: 80, contador: 80
+hola soy 16698, vuelta: 81, contador: 81
+hola soy 16698, vuelta: 82, contador: 82
+hola soy 16698, vuelta: 83, contador: 83
+hola soy 16698, vuelta: 84, contador: 84
+hola soy 16698, vuelta: 85, contador: 85
+hola soy 16698, vuelta: 86, contador: 86
+hola soy 16698, vuelta: 87, contador: 87
+hola soy 16698, vuelta: 88, contador: 88
+hola soy 16698, vuelta: 89, contador: 89
+hola soy 16698, vuelta: 90, contador: 90
+hola soy 16698, vuelta: 91, contador: 91
+hola soy 16698, vuelta: 92, contador: 92
+hola soy 16698, vuelta: 93, contador: 93
+hola soy 16698, vuelta: 94, contador: 94
+hola soy 16698, vuelta: 95, contador: 95
+hola soy 16698, vuelta: 96, contador: 96
+hola soy 16698, vuelta: 97, contador: 97
+hola soy 16698, vuelta: 98, contador: 98
+hola soy 16698, vuelta: 99, contador: 99
+hola soy 16699, vuelta: 0, contador: 0
+hola soy 16699, vuelta: 1, contador: 1
+hola soy 16699, vuelta: 2, contador: 2
+hola soy 16699, vuelta: 3, contador: 3
+hola soy 16699, vuelta: 4, contador: 4
+hola soy 16699, vuelta: 5, contador: 5
+hola soy 16699, vuelta: 6, contador: 6
+hola soy 16699, vuelta: 7, contador: 7
+hola soy 16699, vuelta: 8, contador: 8
+hola soy 16699, vuelta: 9, contador: 9
+hola soy 16699, vuelta: 10, contador: 10
+hola soy 16699, vuelta: 11, contador: 11
+hola soy 16699, vuelta: 12, contador: 12
+hola soy 16699, vuelta: 13, contador: 13
+hola soy 16699, vuelta: 14, contador: 14
+hola soy 16699, vuelta: 15, contador: 15
+hola soy 16699, vuelta: 16, contador: 16
+hola soy 16699, vuelta: 17, contador: 17
+hola soy 16699, vuelta: 18, contador: 18
+hola soy 16699, vuelta: 19, contador: 19
+hola soy 16699, vuelta: 20, contador: 20
+hola soy 16699, vuelta: 21, contador: 21
+hola soy 16699, vuelta: 22, contador: 22
+hola soy 16699, vuelta: 23, contador: 23
+hola soy 16699, vuelta: 24, contador: 24
+hola soy 16699, vuelta: 25, contador: 25
+hola soy 16699, vuelta: 26, contador: 26
+hola soy 16699, vuelta: 27, contador: 27
+hola soy 16699, vuelta: 28, contador: 28
+hola soy 16699, vuelta: 29, contador: 29
+hola soy 16699, vuelta: 30, contador: 30
+hola soy 16699, vuelta: 31, contador: 31
+hola soy 16699, vuelta: 32, contador: 32
+hola soy 16699, vuelta: 33, contador: 33
+hola soy 16699, vuelta: 34, contador: 34
+hola soy 16699, vuelta: 35, contador: 35
+hola soy 16699, vuelta: 36, contador: 36
+hola soy 16699, vuelta: 37, contador: 37
+hola soy 16699, vuelta: 38, contador: 38
+hola soy 16699, vuelta: 39, contador: 39
+hola soy 16699, vuelta: 40, contador: 40
+hola soy 16699, vuelta: 41, contador: 41
+hola soy 16699, vuelta: 42, contador: 42
+hola soy 16699, vuelta: 43, contador: 43
+hola soy 16699, vuelta: 44, contador: 44
+hola soy 16699, vuelta: 45, contador: 45
+hola soy 16699, vuelta: 46, contador: 46
+hola soy 16699, vuelta: 47, contador: 47
+hola soy 16699, vuelta: 48, contador: 48
+hola soy 16699, vuelta: 49, contador: 49
+hola soy 16699, vuelta: 50, contador: 50
+hola soy 16699, vuelta: 51, contador: 51
+hola soy 16699, vuelta: 52, contador: 52
+hola soy 16699, vuelta: 53, contador: 53
+hola soy 16699, vuelta: 54, contador: 54
+hola soy 16699, vuelta: 55, contador: 55
+hola soy 16699, vuelta: 56, contador: 56
+hola soy 16699, vuelta: 57, contador: 57
+hola soy 16699, vuelta: 58, contador: 58
+hola soy 16699, vuelta: 59, contador: 59
+hola soy 16699, vuelta: 60, contador: 60
+hola soy 16699, vuelta: 61, contador: 61
+hola soy 16699, vuelta: 62, contador: 62
+hola soy 16699, vuelta: 63, contador: 63
+hola soy 16699, vuelta: 64, contador: 64
+hola soy 16699, vuelta: 65, contador: 65
+hola soy 16699, vuelta: 66, contador: 66
+hola soy 16699, vuelta: 67, contador: 67
+hola soy 16699, vuelta: 68, contador: 68
+hola soy 16699, vuelta: 69, contador: 69
+hola soy 16699, vuelta: 70, contador: 70
+hola soy 16699, vuelta: 71, contador: 71
+hola soy 16699, vuelta: 72, contador: 72
+hola soy 16699, vuelta: 73, contador: 73
+hola soy 16699, vuelta: 74, contador: 74
+hola soy 16699, vuelta: 75, contador: 75
+hola soy 16699, vuelta: 76, contador: 76
+hola soy 16699, vuelta: 77, contador: 77
+hola soy 16699, vuelta: 78, contador: 78
+hola soy 16699, vuelta: 79, contador: 79
+hola soy 16699, vuelta: 80, contador: 80
+hola soy 16699, vuelta: 81, contador: 81
+hola soy 16699, vuelta: 82, contador: 82
+hola soy 16699, vuelta: 83, contador: 83
+hola soy 16699, vuelta: 84, contador: 84
+hola soy 16699, vuelta: 85, contador: 85
+hola soy 16699, vuelta: 86, contador: 86
+hola soy 16699, vuelta: 87, contador: 87
+hola soy 16699, vuelta: 88, contador: 88
+hola soy 16699, vuelta: 89, contador: 89
+hola soy 16699, vuelta: 90, contador: 90
+hola soy 16699, vuelta: 91, contador: 91
+hola soy 16699, vuelta: 92, contador: 92
+hola soy 16699, vuelta: 93, contador: 93
+hola soy 16699, vuelta: 94, contador: 94
+hola soy 16699, vuelta: 95, contador: 95
+hola soy 16699, vuelta: 96, contador: 96
+hola soy 16699, vuelta: 97, contador: 97
+hola soy 16699, vuelta: 98, contador: 98
+hola soy 16699, vuelta: 99, contador: 99
+hola soy 16700, vuelta: 0, contador: 0
+hola soy 16700, vuelta: 1, contador: 1
+hola soy 16700, vuelta: 2, contador: 2
+hola soy 16700, vuelta: 3, contador: 3
+hola soy 16700, vuelta: 4, contador: 4
+hola soy 16700, vuelta: 5, contador: 5
+hola soy 16700, vuelta: 6, contador: 6
+hola soy 16700, vuelta: 7, contador: 7
+hola soy 16700, vuelta: 8, contador: 8
+hola soy 16700, vuelta: 9, contador: 9
+hola soy 16700, vuelta: 10, contador: 10
+hola soy 16700, vuelta: 11, contador: 11
+hola soy 16700, vuelta: 12, contador: 12
+hola soy 16700, vuelta: 13, contador: 13
+hola soy 16700, vuelta: 14, contador: 14
+hola soy 16700, vuelta: 15, contador: 15
+hola soy 16700, vuelta: 16, contador: 16
+hola soy 16700, vuelta: 17, contador: 17
+hola soy 16700, vuelta: 18, contador: 18
+hola soy 16700, vuelta: 19, contador: 19
+hola soy 16700, vuelta: 20, contador: 20
+hola soy 16700, vuelta: 21, contador: 21
+hola soy 16700, vuelta: 22, contador: 22
+hola soy 16700, vuelta: 23, contador: 23
+hola soy 16700, vuelta: 24, contador: 24
+hola soy 16700, vuelta: 25, contador: 25
+hola soy 16700, vuelta: 26, contador: 26
+hola soy 16700, vuelta: 27, contador: 27
+hola soy 16700, vuelta: 28, contador: 28
+hola soy 16700, vuelta: 29, contador: 29
+hola soy 16700, vuelta: 30, contador: 30
+hola soy 16700, vuelta: 31, contador: 31
+hola soy 16700, vuelta: 32, contador: 32
+hola soy 16700, vuelta: 33, contador: 33
+hola soy 16700, vuelta: 34, contador: 34
+hola soy 16700, vuelta: 35, contador: 35
+hola soy 16700, vuelta: 36, contador: 36
+hola soy 16700, vuelta: 37, contador: 37
+hola soy 16700, vuelta: 38, contador: 38
+hola soy 16700, vuelta: 39, contador: 39
+hola soy 16700, vuelta: 40, contador: 40
+hola soy 16700, vuelta: 41, contador: 41
+hola soy 16700, vuelta: 42, contador: 42
+hola soy 16700, vuelta: 43, contador: 43
+hola soy 16700, vuelta: 44, contador: 44
+hola soy 16700, vuelta: 45, contador: 45
+hola soy 16700, vuelta: 46, contador: 46
+hola soy 16700, vuelta: 47, contador: 47
+hola soy 16700, vuelta: 48, contador: 48
+hola soy 16700, vuelta: 49, contador: 49
+hola soy 16700, vuelta: 50, contador: 50
+hola soy 16700, vuelta: 51, contador: 51
+hola soy 16700, vuelta: 52, contador: 52
+hola soy 16700, vuelta: 53, contador: 53
+hola soy 16700, vuelta: 54, contador: 54
+hola soy 16700, vuelta: 55, contador: 55
+hola soy 16700, vuelta: 56, contador: 56
+hola soy 16700, vuelta: 57, contador: 57
+hola soy 16700, vuelta: 58, contador: 58
+hola soy 16700, vuelta: 59, contador: 59
+hola soy 16700, vuelta: 60, contador: 60
+hola soy 16700, vuelta: 61, contador: 61
+hola soy 16700, vuelta: 62, contador: 62
+hola soy 16700, vuelta: 63, contador: 63
+hola soy 16700, vuelta: 64, contador: 64
+hola soy 16700, vuelta: 65, contador: 65
+hola soy 16700, vuelta: 66, contador: 66
+hola soy 16700, vuelta: 67, contador: 67
+hola soy 16700, vuelta: 68, contador: 68
+hola soy 16700, vuelta: 69, contador: 69
+hola soy 16700, vuelta: 70, contador: 70
+hola soy 16700, vuelta: 71, contador: 71
+hola soy 16700, vuelta: 72, contador: 72
+hola soy 16700, vuelta: 73, contador: 73
+hola soy 16700, vuelta: 74, contador: 74
+hola soy 16700, vuelta: 75, contador: 75
+hola soy 16700, vuelta: 76, contador: 76
+hola soy 16700, vuelta: 77, contador: 77
+hola soy 16700, vuelta: 78, contador: 78
+hola soy 16700, vuelta: 79, contador: 79
+hola soy 16700, vuelta: 80, contador: 80
+hola soy 16700, vuelta: 81, contador: 81
+hola soy 16700, vuelta: 82, contador: 82
+hola soy 16700, vuelta: 83, contador: 83
+hola soy 16700, vuelta: 84, contador: 84
+hola soy 16700, vuelta: 85, contador: 85
+hola soy 16700, vuelta: 86, contador: 86
+hola soy 16700, vuelta: 87, contador: 87
+hola soy 16700, vuelta: 88, contador: 88
+hola soy 16700, vuelta: 89, contador: 89
+hola soy 16700, vuelta: 90, contador: 90
+hola soy 16700, vuelta: 91, contador: 91
+hola soy 16700, vuelta: 92, contador: 92
+hola soy 16700, vuelta: 93, contador: 93
+hola soy 16700, vuelta: 94, contador: 94
+hola soy 16700, vuelta: 95, contador: 95
+hola soy 16700, vuelta: 96, contador: 96
+hola soy 16700, vuelta: 97, contador: 97
+hola soy 16700, vuelta: 98, contador: 98
+hola soy 16700, vuelta: 99, contador: 99
+hola soy 16697, vuelta: 0, contador: 0
+hola soy 16697, vuelta: 1, contador: 1
+hola soy 16697, vuelta: 2, contador: 2
+hola soy 16697, vuelta: 3, contador: 3
+hola soy 16697, vuelta: 4, contador: 4
+hola soy 16697, vuelta: 5, contador: 5
+hola soy 16697, vuelta: 6, contador: 6
+hola soy 16697, vuelta: 7, contador: 7
+hola soy 16697, vuelta: 8, contador: 8
+hola soy 16697, vuelta: 9, contador: 9
+hola soy 16697, vuelta: 10, contador: 10
+hola soy 16697, vuelta: 11, contador: 11
+hola soy 16697, vuelta: 12, contador: 12
+hola soy 16697, vuelta: 13, contador: 13
+hola soy 16697, vuelta: 14, contador: 14
+hola soy 16697, vuelta: 15, contador: 15
+hola soy 16697, vuelta: 16, contador: 16
+hola soy 16697, vuelta: 17, contador: 17
+hola soy 16697, vuelta: 18, contador: 18
+hola soy 16697, vuelta: 19, contador: 19
+hola soy 16697, vuelta: 20, contador: 20
+hola soy 16697, vuelta: 21, contador: 21
+hola soy 16697, vuelta: 22, contador: 22
+hola soy 16697, vuelta: 23, contador: 23
+hola soy 16697, vuelta: 24, contador: 24
+hola soy 16697, vuelta: 25, contador: 25
+hola soy 16697, vuelta: 26, contador: 26
+hola soy 16697, vuelta: 27, contador: 27
+hola soy 16697, vuelta: 28, contador: 28
+hola soy 16697, vuelta: 29, contador: 29
+hola soy 16697, vuelta: 30, contador: 30
+hola soy 16697, vuelta: 31, contador: 31
+hola soy 16697, vuelta: 32, contador: 32
+hola soy 16697, vuelta: 33, contador: 33
+hola soy 16697, vuelta: 34, contador: 34
+hola soy 16697, vuelta: 35, contador: 35
+hola soy 16697, vuelta: 36, contador: 36
+hola soy 16697, vuelta: 37, contador: 37
+hola soy 16697, vuelta: 38, contador: 38
+hola soy 16697, vuelta: 39, contador: 39
+hola soy 16697, vuelta: 40, contador: 40
+hola soy 16697, vuelta: 41, contador: 41
+hola soy 16697, vuelta: 42, contador: 42
+hola soy 16697, vuelta: 43, contador: 43
+hola soy 16697, vuelta: 44, contador: 44
+hola soy 16697, vuelta: 45, contador: 45
+hola soy 16697, vuelta: 46, contador: 46
+hola soy 16697, vuelta: 47, contador: 47
+hola soy 16697, vuelta: 48, contador: 48
+hola soy 16697, vuelta: 49, contador: 49
+hola soy 16697, vuelta: 50, contador: 50
+hola soy 16697, vuelta: 51, contador: 51
+hola soy 16697, vuelta: 52, contador: 52
+hola soy 16697, vuelta: 53, contador: 53
+hola soy 16697, vuelta: 54, contador: 54
+hola soy 16697, vuelta: 55, contador: 55
+hola soy 16697, vuelta: 56, contador: 56
+hola soy 16697, vuelta: 57, contador: 57
+hola soy 16697, vuelta: 58, contador: 58
+hola soy 16697, vuelta: 59, contador: 59
+hola soy 16697, vuelta: 60, contador: 60
+hola soy 16697, vuelta: 61, contador: 61
+hola soy 16697, vuelta: 62, contador: 62
+hola soy 16697, vuelta: 63, contador: 63
+hola soy 16697, vuelta: 64, contador: 64
+hola soy 16697, vuelta: 65, contador: 65
+hola soy 16697, vuelta: 66, contador: 66
+hola soy 16697, vuelta: 67, contador: 67
+hola soy 16697, vuelta: 68, contador: 68
+hola soy 16697, vuelta: 69, contador: 69
+hola soy 16697, vuelta: 70, contador: 70
+hola soy 16697, vuelta: 71, contador: 71
+hola soy 16697, vuelta: 72, contador: 72
+hola soy 16697, vuelta: 73, contador: 73
+hola soy 16697, vuelta: 74, contador: 74
+hola soy 16697, vuelta: 75, contador: 75
+hola soy 16697, vuelta: 76, contador: 76
+hola soy 16697, vuelta: 77, contador: 77
+hola soy 16697, vuelta: 78, contador: 78
+hola soy 16697, vuelta: 79, contador: 79
+hola soy 16697, vuelta: 80, contador: 80
+hola soy 16697, vuelta: 81, contador: 81
+hola soy 16697, vuelta: 82, contador: 82
+hola soy 16697, vuelta: 83, contador: 83
+hola soy 16697, vuelta: 84, contador: 84
+hola soy 16697, vuelta: 85, contador: 85
+hola soy 16697, vuelta: 86, contador: 86
+hola soy 16697, vuelta: 87, contador: 87
+hola soy 16697, vuelta: 88, contador: 88
+hola soy 16697, vuelta: 89, contador: 89
+hola soy 16697, vuelta: 90, contador: 90
+hola soy 16697, vuelta: 91, contador: 91
+hola soy 16697, vuelta: 92, contador: 92
+hola soy 16697, vuelta: 93, contador: 93
+hola soy 16697, vuelta: 94, contador: 94
+hola soy 16697, vuelta: 95, contador: 95
+hola soy 16697, vuelta: 96, contador: 96
+hola soy 16697, vuelta: 97, contador: 97
+hola soy 16697, vuelta: 98, contador: 98
+hola soy 16697, vuelta: 99, contador: 99
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 4_proc esos.py
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 4_procesos.py[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C 4_proces[1Pos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C 4_proceso[1Ps.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C 4_procesos[1P.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C 4_procesos.[1Ppy[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C 4_procesos.p[1Py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ p 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [Cy 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[Ct 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[Ch 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[Co 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[Cn 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C3 4_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3 4_procesos.py > 4_procesos.txt
+[?2004l  File "/home/alumno/Descargas/practicas-prpa/multiprocessing/4_procesos.py", line 15
+    c = Value(’i’, 0)
+              ^
+SyntaxError: invalid character '’' (U+2019)
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ python3 4_procesos.py > 4_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 4_procesos.py[K %[K&
+[?2004l[1] 16734
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 4_procesos.py &[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ python3 4_procesos.py > 4_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ emacs 4_procesos.py[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[Kcat 4_procesos.py
+[?2004lfrom multiprocessing import Process
+from multiprocessing import current_process
+from multiprocessing import Value
+
+def f(c):
+    for i in range(100):
+        c.value = c.value + 1
+        print (f"hola soy {current_process().pid}, vuelta: {i}, contador: {c.value}")
+
+def g():
+    print ("adios")
+if __name__ == "__main__":
+    N = 8
+    lp = []
+    c = Value('i', 0)
+    for i in range(N):
+        lp.append(Process(target=f, args=(c,)))
+    print (f"Valor inicial del contador {c.value}")
+    for p in lp:
+        p.start()
+
+    for p in lp:
+        p.join()
+
+    q = Process(target=g)
+    q.start()
+    q.join()
+    print (f"Valor final del contador {c.value}")
+    print ("fin")
+[1]+  Hecho                   emacs 4_procesos.py
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ py
+py3clean            pygmentize          pyspark2.cmd
+py3compile          pylint              pyspark.cmd
+py3versions         pylsp               python3
+pybabel             pyreverse           python3.10
+pybabel-python3     pyroot              python3.10-config
+pycodestyle         pyrsa-decrypt       python3-config
+pydoc3              pyrsa-encrypt       python3-futurize
+pydoc3.10           pyrsa-keygen        python3-pasteurize
+pydocstyle          pyrsa-priv2pub      pythran
+pyflakes            pyrsa-sign          pythran-config
+pygettext3          pyrsa-verify        
+pygettext3.10       pyspark             
+]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ python3 4_procesos.py > 4_procesos.txt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ at[K[Kcat 4_procesos.py
+[?2004lfrom multiprocessing import Process
+from multiprocessing import current_process
+from multiprocessing import Value
+
+def f(c):
+    for i in range(100):
+        c.value = c.value + 1
+        print (f"hola soy {current_process().pid}, vuelta: {i}, contador: {c.value}")
+
+def g():
+    print ("adios")
+if __name__ == "__main__":
+    N = 8
+    lp = []
+    c = Value('i', 0)
+    for i in range(N):
+        lp.append(Process(target=f, args=(c,)))
+    print (f"Valor inicial del contador {c.value}")
+    for p in lp:
+        p.start()
+
+    for p in lp:
+        p.join()
+
+    q = Process(target=g)
+    q.start()
+    q.join()
+    print (f"Valor final del contador {c.value}")
+    print ("fin")
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ cat 4_procesos.py[K[Ktxt
+[?2004lValor inicial del contador 0
+hola soy 16755, vuelta: 0, contador: 1
+hola soy 16755, vuelta: 1, contador: 2
+hola soy 16755, vuelta: 2, contador: 3
+hola soy 16755, vuelta: 3, contador: 4
+hola soy 16755, vuelta: 4, contador: 5
+hola soy 16755, vuelta: 5, contador: 6
+hola soy 16755, vuelta: 6, contador: 7
+hola soy 16755, vuelta: 7, contador: 8
+hola soy 16755, vuelta: 8, contador: 9
+hola soy 16755, vuelta: 9, contador: 10
+hola soy 16755, vuelta: 10, contador: 11
+hola soy 16755, vuelta: 11, contador: 12
+hola soy 16755, vuelta: 12, contador: 13
+hola soy 16755, vuelta: 13, contador: 14
+hola soy 16755, vuelta: 14, contador: 15
+hola soy 16755, vuelta: 15, contador: 16
+hola soy 16755, vuelta: 16, contador: 17
+hola soy 16755, vuelta: 17, contador: 18
+hola soy 16755, vuelta: 18, contador: 19
+hola soy 16755, vuelta: 19, contador: 20
+hola soy 16755, vuelta: 20, contador: 21
+hola soy 16755, vuelta: 21, contador: 22
+hola soy 16755, vuelta: 22, contador: 23
+hola soy 16755, vuelta: 23, contador: 24
+hola soy 16755, vuelta: 24, contador: 25
+hola soy 16755, vuelta: 25, contador: 26
+hola soy 16755, vuelta: 26, contador: 27
+hola soy 16755, vuelta: 27, contador: 28
+hola soy 16755, vuelta: 28, contador: 29
+hola soy 16755, vuelta: 29, contador: 30
+hola soy 16755, vuelta: 30, contador: 31
+hola soy 16755, vuelta: 31, contador: 32
+hola soy 16755, vuelta: 32, contador: 33
+hola soy 16755, vuelta: 33, contador: 34
+hola soy 16755, vuelta: 34, contador: 35
+hola soy 16755, vuelta: 35, contador: 36
+hola soy 16755, vuelta: 36, contador: 37
+hola soy 16755, vuelta: 37, contador: 38
+hola soy 16755, vuelta: 38, contador: 39
+hola soy 16755, vuelta: 39, contador: 40
+hola soy 16755, vuelta: 40, contador: 41
+hola soy 16755, vuelta: 41, contador: 42
+hola soy 16755, vuelta: 42, contador: 43
+hola soy 16755, vuelta: 43, contador: 44
+hola soy 16755, vuelta: 44, contador: 45
+hola soy 16755, vuelta: 45, contador: 46
+hola soy 16755, vuelta: 46, contador: 47
+hola soy 16755, vuelta: 47, contador: 48
+hola soy 16755, vuelta: 48, contador: 49
+hola soy 16755, vuelta: 49, contador: 50
+hola soy 16755, vuelta: 50, contador: 51
+hola soy 16755, vuelta: 51, contador: 52
+hola soy 16755, vuelta: 52, contador: 53
+hola soy 16755, vuelta: 53, contador: 54
+hola soy 16755, vuelta: 54, contador: 55
+hola soy 16755, vuelta: 55, contador: 56
+hola soy 16755, vuelta: 56, contador: 57
+hola soy 16755, vuelta: 57, contador: 58
+hola soy 16755, vuelta: 58, contador: 59
+hola soy 16755, vuelta: 59, contador: 60
+hola soy 16755, vuelta: 60, contador: 61
+hola soy 16755, vuelta: 61, contador: 62
+hola soy 16755, vuelta: 62, contador: 63
+hola soy 16755, vuelta: 63, contador: 64
+hola soy 16755, vuelta: 64, contador: 65
+hola soy 16755, vuelta: 65, contador: 66
+hola soy 16755, vuelta: 66, contador: 67
+hola soy 16755, vuelta: 67, contador: 68
+hola soy 16755, vuelta: 68, contador: 69
+hola soy 16755, vuelta: 69, contador: 70
+hola soy 16755, vuelta: 70, contador: 71
+hola soy 16755, vuelta: 71, contador: 72
+hola soy 16755, vuelta: 72, contador: 73
+hola soy 16755, vuelta: 73, contador: 74
+hola soy 16755, vuelta: 74, contador: 75
+hola soy 16755, vuelta: 75, contador: 76
+hola soy 16755, vuelta: 76, contador: 77
+hola soy 16755, vuelta: 77, contador: 78
+hola soy 16755, vuelta: 78, contador: 79
+hola soy 16755, vuelta: 79, contador: 80
+hola soy 16755, vuelta: 80, contador: 81
+hola soy 16755, vuelta: 81, contador: 82
+hola soy 16755, vuelta: 82, contador: 83
+hola soy 16755, vuelta: 83, contador: 84
+hola soy 16755, vuelta: 84, contador: 85
+hola soy 16755, vuelta: 85, contador: 86
+hola soy 16755, vuelta: 86, contador: 87
+hola soy 16755, vuelta: 87, contador: 88
+hola soy 16755, vuelta: 88, contador: 89
+hola soy 16755, vuelta: 89, contador: 90
+hola soy 16755, vuelta: 90, contador: 91
+hola soy 16755, vuelta: 91, contador: 92
+hola soy 16755, vuelta: 92, contador: 93
+hola soy 16755, vuelta: 93, contador: 94
+hola soy 16755, vuelta: 94, contador: 95
+hola soy 16755, vuelta: 95, contador: 96
+hola soy 16755, vuelta: 96, contador: 97
+hola soy 16755, vuelta: 97, contador: 98
+hola soy 16755, vuelta: 98, contador: 99
+hola soy 16755, vuelta: 99, contador: 100
+hola soy 16756, vuelta: 0, contador: 101
+hola soy 16756, vuelta: 1, contador: 102
+hola soy 16756, vuelta: 2, contador: 103
+hola soy 16756, vuelta: 3, contador: 104
+hola soy 16756, vuelta: 4, contador: 105
+hola soy 16756, vuelta: 5, contador: 106
+hola soy 16756, vuelta: 6, contador: 107
+hola soy 16756, vuelta: 7, contador: 108
+hola soy 16756, vuelta: 8, contador: 109
+hola soy 16756, vuelta: 9, contador: 110
+hola soy 16756, vuelta: 10, contador: 111
+hola soy 16756, vuelta: 11, contador: 112
+hola soy 16756, vuelta: 12, contador: 113
+hola soy 16756, vuelta: 13, contador: 114
+hola soy 16756, vuelta: 14, contador: 115
+hola soy 16756, vuelta: 15, contador: 116
+hola soy 16756, vuelta: 16, contador: 117
+hola soy 16756, vuelta: 17, contador: 118
+hola soy 16756, vuelta: 18, contador: 119
+hola soy 16756, vuelta: 19, contador: 120
+hola soy 16756, vuelta: 20, contador: 121
+hola soy 16756, vuelta: 21, contador: 122
+hola soy 16756, vuelta: 22, contador: 123
+hola soy 16756, vuelta: 23, contador: 124
+hola soy 16756, vuelta: 24, contador: 125
+hola soy 16756, vuelta: 25, contador: 126
+hola soy 16756, vuelta: 26, contador: 127
+hola soy 16756, vuelta: 27, contador: 128
+hola soy 16756, vuelta: 28, contador: 129
+hola soy 16756, vuelta: 29, contador: 130
+hola soy 16756, vuelta: 30, contador: 131
+hola soy 16756, vuelta: 31, contador: 132
+hola soy 16756, vuelta: 32, contador: 133
+hola soy 16756, vuelta: 33, contador: 134
+hola soy 16756, vuelta: 34, contador: 135
+hola soy 16756, vuelta: 35, contador: 136
+hola soy 16756, vuelta: 36, contador: 137
+hola soy 16756, vuelta: 37, contador: 138
+hola soy 16756, vuelta: 38, contador: 139
+hola soy 16756, vuelta: 39, contador: 140
+hola soy 16756, vuelta: 40, contador: 141
+hola soy 16756, vuelta: 41, contador: 142
+hola soy 16756, vuelta: 42, contador: 143
+hola soy 16756, vuelta: 43, contador: 144
+hola soy 16756, vuelta: 44, contador: 145
+hola soy 16756, vuelta: 45, contador: 146
+hola soy 16756, vuelta: 46, contador: 147
+hola soy 16756, vuelta: 47, contador: 148
+hola soy 16756, vuelta: 48, contador: 149
+hola soy 16756, vuelta: 49, contador: 150
+hola soy 16756, vuelta: 50, contador: 151
+hola soy 16756, vuelta: 51, contador: 152
+hola soy 16756, vuelta: 52, contador: 153
+hola soy 16756, vuelta: 53, contador: 154
+hola soy 16756, vuelta: 54, contador: 155
+hola soy 16756, vuelta: 55, contador: 156
+hola soy 16756, vuelta: 56, contador: 157
+hola soy 16756, vuelta: 57, contador: 158
+hola soy 16756, vuelta: 58, contador: 159
+hola soy 16756, vuelta: 59, contador: 160
+hola soy 16756, vuelta: 60, contador: 161
+hola soy 16756, vuelta: 61, contador: 162
+hola soy 16756, vuelta: 62, contador: 163
+hola soy 16756, vuelta: 63, contador: 164
+hola soy 16756, vuelta: 64, contador: 165
+hola soy 16756, vuelta: 65, contador: 166
+hola soy 16756, vuelta: 66, contador: 167
+hola soy 16756, vuelta: 67, contador: 168
+hola soy 16756, vuelta: 68, contador: 169
+hola soy 16756, vuelta: 69, contador: 170
+hola soy 16756, vuelta: 70, contador: 171
+hola soy 16756, vuelta: 71, contador: 172
+hola soy 16756, vuelta: 72, contador: 173
+hola soy 16756, vuelta: 73, contador: 174
+hola soy 16756, vuelta: 74, contador: 175
+hola soy 16756, vuelta: 75, contador: 176
+hola soy 16756, vuelta: 76, contador: 177
+hola soy 16756, vuelta: 77, contador: 178
+hola soy 16756, vuelta: 78, contador: 179
+hola soy 16756, vuelta: 79, contador: 180
+hola soy 16756, vuelta: 80, contador: 181
+hola soy 16756, vuelta: 81, contador: 182
+hola soy 16756, vuelta: 82, contador: 183
+hola soy 16756, vuelta: 83, contador: 184
+hola soy 16756, vuelta: 84, contador: 185
+hola soy 16756, vuelta: 85, contador: 186
+hola soy 16756, vuelta: 86, contador: 187
+hola soy 16756, vuelta: 87, contador: 188
+hola soy 16756, vuelta: 88, contador: 189
+hola soy 16756, vuelta: 89, contador: 190
+hola soy 16756, vuelta: 90, contador: 191
+hola soy 16756, vuelta: 91, contador: 192
+hola soy 16756, vuelta: 92, contador: 193
+hola soy 16756, vuelta: 93, contador: 194
+hola soy 16756, vuelta: 94, contador: 195
+hola soy 16756, vuelta: 95, contador: 196
+hola soy 16756, vuelta: 96, contador: 197
+hola soy 16756, vuelta: 97, contador: 198
+hola soy 16756, vuelta: 98, contador: 199
+hola soy 16756, vuelta: 99, contador: 200
+hola soy 16757, vuelta: 0, contador: 201
+hola soy 16757, vuelta: 1, contador: 202
+hola soy 16757, vuelta: 2, contador: 203
+hola soy 16757, vuelta: 3, contador: 204
+hola soy 16757, vuelta: 4, contador: 205
+hola soy 16757, vuelta: 5, contador: 206
+hola soy 16757, vuelta: 6, contador: 207
+hola soy 16757, vuelta: 7, contador: 208
+hola soy 16757, vuelta: 8, contador: 209
+hola soy 16757, vuelta: 9, contador: 210
+hola soy 16757, vuelta: 10, contador: 211
+hola soy 16757, vuelta: 11, contador: 212
+hola soy 16757, vuelta: 12, contador: 213
+hola soy 16757, vuelta: 13, contador: 214
+hola soy 16757, vuelta: 14, contador: 215
+hola soy 16757, vuelta: 15, contador: 216
+hola soy 16757, vuelta: 16, contador: 217
+hola soy 16757, vuelta: 17, contador: 218
+hola soy 16757, vuelta: 18, contador: 219
+hola soy 16757, vuelta: 19, contador: 220
+hola soy 16757, vuelta: 20, contador: 221
+hola soy 16757, vuelta: 21, contador: 222
+hola soy 16757, vuelta: 22, contador: 223
+hola soy 16757, vuelta: 23, contador: 224
+hola soy 16757, vuelta: 24, contador: 225
+hola soy 16757, vuelta: 25, contador: 226
+hola soy 16757, vuelta: 26, contador: 227
+hola soy 16757, vuelta: 27, contador: 228
+hola soy 16757, vuelta: 28, contador: 229
+hola soy 16757, vuelta: 29, contador: 230
+hola soy 16757, vuelta: 30, contador: 231
+hola soy 16757, vuelta: 31, contador: 232
+hola soy 16757, vuelta: 32, contador: 233
+hola soy 16757, vuelta: 33, contador: 234
+hola soy 16757, vuelta: 34, contador: 235
+hola soy 16757, vuelta: 35, contador: 236
+hola soy 16757, vuelta: 36, contador: 237
+hola soy 16757, vuelta: 37, contador: 238
+hola soy 16757, vuelta: 38, contador: 239
+hola soy 16757, vuelta: 39, contador: 240
+hola soy 16757, vuelta: 40, contador: 241
+hola soy 16757, vuelta: 41, contador: 242
+hola soy 16757, vuelta: 42, contador: 243
+hola soy 16757, vuelta: 43, contador: 244
+hola soy 16757, vuelta: 44, contador: 245
+hola soy 16757, vuelta: 45, contador: 246
+hola soy 16757, vuelta: 46, contador: 247
+hola soy 16757, vuelta: 47, contador: 248
+hola soy 16757, vuelta: 48, contador: 249
+hola soy 16757, vuelta: 49, contador: 250
+hola soy 16757, vuelta: 50, contador: 251
+hola soy 16757, vuelta: 51, contador: 252
+hola soy 16757, vuelta: 52, contador: 253
+hola soy 16757, vuelta: 53, contador: 254
+hola soy 16757, vuelta: 54, contador: 255
+hola soy 16757, vuelta: 55, contador: 256
+hola soy 16757, vuelta: 56, contador: 257
+hola soy 16757, vuelta: 57, contador: 258
+hola soy 16757, vuelta: 58, contador: 259
+hola soy 16757, vuelta: 59, contador: 260
+hola soy 16757, vuelta: 60, contador: 261
+hola soy 16757, vuelta: 61, contador: 262
+hola soy 16757, vuelta: 62, contador: 263
+hola soy 16757, vuelta: 63, contador: 264
+hola soy 16757, vuelta: 64, contador: 265
+hola soy 16757, vuelta: 65, contador: 266
+hola soy 16757, vuelta: 66, contador: 267
+hola soy 16757, vuelta: 67, contador: 268
+hola soy 16757, vuelta: 68, contador: 269
+hola soy 16757, vuelta: 69, contador: 270
+hola soy 16757, vuelta: 70, contador: 271
+hola soy 16757, vuelta: 71, contador: 272
+hola soy 16757, vuelta: 72, contador: 273
+hola soy 16757, vuelta: 73, contador: 274
+hola soy 16757, vuelta: 74, contador: 275
+hola soy 16757, vuelta: 75, contador: 276
+hola soy 16757, vuelta: 76, contador: 277
+hola soy 16757, vuelta: 77, contador: 278
+hola soy 16757, vuelta: 78, contador: 279
+hola soy 16757, vuelta: 79, contador: 280
+hola soy 16757, vuelta: 80, contador: 281
+hola soy 16757, vuelta: 81, contador: 282
+hola soy 16757, vuelta: 82, contador: 283
+hola soy 16757, vuelta: 83, contador: 284
+hola soy 16757, vuelta: 84, contador: 285
+hola soy 16757, vuelta: 85, contador: 286
+hola soy 16757, vuelta: 86, contador: 287
+hola soy 16757, vuelta: 87, contador: 288
+hola soy 16757, vuelta: 88, contador: 289
+hola soy 16757, vuelta: 89, contador: 290
+hola soy 16757, vuelta: 90, contador: 291
+hola soy 16757, vuelta: 91, contador: 292
+hola soy 16757, vuelta: 92, contador: 293
+hola soy 16757, vuelta: 93, contador: 294
+hola soy 16757, vuelta: 94, contador: 295
+hola soy 16757, vuelta: 95, contador: 296
+hola soy 16757, vuelta: 96, contador: 297
+hola soy 16757, vuelta: 97, contador: 298
+hola soy 16757, vuelta: 98, contador: 299
+hola soy 16757, vuelta: 99, contador: 300
+hola soy 16758, vuelta: 0, contador: 301
+hola soy 16758, vuelta: 1, contador: 302
+hola soy 16758, vuelta: 2, contador: 303
+hola soy 16758, vuelta: 3, contador: 304
+hola soy 16758, vuelta: 4, contador: 305
+hola soy 16758, vuelta: 5, contador: 306
+hola soy 16758, vuelta: 6, contador: 307
+hola soy 16758, vuelta: 7, contador: 308
+hola soy 16758, vuelta: 8, contador: 309
+hola soy 16758, vuelta: 9, contador: 310
+hola soy 16758, vuelta: 10, contador: 311
+hola soy 16758, vuelta: 11, contador: 312
+hola soy 16758, vuelta: 12, contador: 313
+hola soy 16758, vuelta: 13, contador: 314
+hola soy 16758, vuelta: 14, contador: 315
+hola soy 16758, vuelta: 15, contador: 316
+hola soy 16758, vuelta: 16, contador: 317
+hola soy 16758, vuelta: 17, contador: 318
+hola soy 16758, vuelta: 18, contador: 319
+hola soy 16758, vuelta: 19, contador: 320
+hola soy 16758, vuelta: 20, contador: 321
+hola soy 16758, vuelta: 21, contador: 322
+hola soy 16758, vuelta: 22, contador: 323
+hola soy 16758, vuelta: 23, contador: 324
+hola soy 16758, vuelta: 24, contador: 325
+hola soy 16758, vuelta: 25, contador: 326
+hola soy 16758, vuelta: 26, contador: 327
+hola soy 16758, vuelta: 27, contador: 328
+hola soy 16758, vuelta: 28, contador: 329
+hola soy 16758, vuelta: 29, contador: 330
+hola soy 16758, vuelta: 30, contador: 331
+hola soy 16758, vuelta: 31, contador: 332
+hola soy 16758, vuelta: 32, contador: 333
+hola soy 16758, vuelta: 33, contador: 334
+hola soy 16758, vuelta: 34, contador: 335
+hola soy 16758, vuelta: 35, contador: 336
+hola soy 16758, vuelta: 36, contador: 337
+hola soy 16758, vuelta: 37, contador: 338
+hola soy 16758, vuelta: 38, contador: 339
+hola soy 16758, vuelta: 39, contador: 340
+hola soy 16758, vuelta: 40, contador: 341
+hola soy 16758, vuelta: 41, contador: 342
+hola soy 16758, vuelta: 42, contador: 343
+hola soy 16758, vuelta: 43, contador: 344
+hola soy 16758, vuelta: 44, contador: 345
+hola soy 16758, vuelta: 45, contador: 346
+hola soy 16758, vuelta: 46, contador: 347
+hola soy 16758, vuelta: 47, contador: 348
+hola soy 16758, vuelta: 48, contador: 349
+hola soy 16758, vuelta: 49, contador: 350
+hola soy 16758, vuelta: 50, contador: 351
+hola soy 16758, vuelta: 51, contador: 352
+hola soy 16758, vuelta: 52, contador: 353
+hola soy 16758, vuelta: 53, contador: 354
+hola soy 16758, vuelta: 54, contador: 355
+hola soy 16758, vuelta: 55, contador: 356
+hola soy 16758, vuelta: 56, contador: 357
+hola soy 16758, vuelta: 57, contador: 358
+hola soy 16758, vuelta: 58, contador: 359
+hola soy 16758, vuelta: 59, contador: 360
+hola soy 16758, vuelta: 60, contador: 361
+hola soy 16758, vuelta: 61, contador: 362
+hola soy 16758, vuelta: 62, contador: 363
+hola soy 16758, vuelta: 63, contador: 364
+hola soy 16758, vuelta: 64, contador: 365
+hola soy 16758, vuelta: 65, contador: 366
+hola soy 16758, vuelta: 66, contador: 367
+hola soy 16758, vuelta: 67, contador: 368
+hola soy 16758, vuelta: 68, contador: 369
+hola soy 16758, vuelta: 69, contador: 370
+hola soy 16758, vuelta: 70, contador: 371
+hola soy 16758, vuelta: 71, contador: 372
+hola soy 16758, vuelta: 72, contador: 373
+hola soy 16758, vuelta: 73, contador: 374
+hola soy 16758, vuelta: 74, contador: 375
+hola soy 16758, vuelta: 75, contador: 376
+hola soy 16758, vuelta: 76, contador: 377
+hola soy 16758, vuelta: 77, contador: 378
+hola soy 16758, vuelta: 78, contador: 379
+hola soy 16758, vuelta: 79, contador: 380
+hola soy 16758, vuelta: 80, contador: 381
+hola soy 16758, vuelta: 81, contador: 382
+hola soy 16758, vuelta: 82, contador: 383
+hola soy 16758, vuelta: 83, contador: 384
+hola soy 16758, vuelta: 84, contador: 385
+hola soy 16758, vuelta: 85, contador: 386
+hola soy 16758, vuelta: 86, contador: 387
+hola soy 16758, vuelta: 87, contador: 388
+hola soy 16758, vuelta: 88, contador: 389
+hola soy 16758, vuelta: 89, contador: 390
+hola soy 16758, vuelta: 90, contador: 391
+hola soy 16758, vuelta: 91, contador: 392
+hola soy 16758, vuelta: 92, contador: 393
+hola soy 16758, vuelta: 93, contador: 394
+hola soy 16758, vuelta: 94, contador: 395
+hola soy 16758, vuelta: 95, contador: 396
+hola soy 16758, vuelta: 96, contador: 397
+hola soy 16758, vuelta: 97, contador: 398
+hola soy 16758, vuelta: 98, contador: 399
+hola soy 16758, vuelta: 99, contador: 400
+hola soy 16759, vuelta: 0, contador: 401
+hola soy 16759, vuelta: 1, contador: 402
+hola soy 16759, vuelta: 2, contador: 403
+hola soy 16759, vuelta: 3, contador: 404
+hola soy 16759, vuelta: 4, contador: 405
+hola soy 16759, vuelta: 5, contador: 406
+hola soy 16759, vuelta: 6, contador: 407
+hola soy 16759, vuelta: 7, contador: 408
+hola soy 16759, vuelta: 8, contador: 409
+hola soy 16759, vuelta: 9, contador: 410
+hola soy 16759, vuelta: 10, contador: 411
+hola soy 16759, vuelta: 11, contador: 412
+hola soy 16759, vuelta: 12, contador: 413
+hola soy 16759, vuelta: 13, contador: 414
+hola soy 16759, vuelta: 14, contador: 415
+hola soy 16759, vuelta: 15, contador: 416
+hola soy 16759, vuelta: 16, contador: 417
+hola soy 16759, vuelta: 17, contador: 418
+hola soy 16759, vuelta: 18, contador: 419
+hola soy 16759, vuelta: 19, contador: 420
+hola soy 16759, vuelta: 20, contador: 421
+hola soy 16759, vuelta: 21, contador: 422
+hola soy 16759, vuelta: 22, contador: 423
+hola soy 16759, vuelta: 23, contador: 424
+hola soy 16759, vuelta: 24, contador: 425
+hola soy 16759, vuelta: 25, contador: 426
+hola soy 16759, vuelta: 26, contador: 427
+hola soy 16759, vuelta: 27, contador: 428
+hola soy 16759, vuelta: 28, contador: 429
+hola soy 16759, vuelta: 29, contador: 430
+hola soy 16759, vuelta: 30, contador: 431
+hola soy 16759, vuelta: 31, contador: 432
+hola soy 16759, vuelta: 32, contador: 433
+hola soy 16759, vuelta: 33, contador: 434
+hola soy 16759, vuelta: 34, contador: 435
+hola soy 16759, vuelta: 35, contador: 436
+hola soy 16759, vuelta: 36, contador: 437
+hola soy 16759, vuelta: 37, contador: 438
+hola soy 16759, vuelta: 38, contador: 439
+hola soy 16759, vuelta: 39, contador: 440
+hola soy 16759, vuelta: 40, contador: 441
+hola soy 16759, vuelta: 41, contador: 442
+hola soy 16759, vuelta: 42, contador: 443
+hola soy 16759, vuelta: 43, contador: 444
+hola soy 16759, vuelta: 44, contador: 445
+hola soy 16759, vuelta: 45, contador: 446
+hola soy 16759, vuelta: 46, contador: 447
+hola soy 16759, vuelta: 47, contador: 448
+hola soy 16759, vuelta: 48, contador: 449
+hola soy 16759, vuelta: 49, contador: 450
+hola soy 16759, vuelta: 50, contador: 451
+hola soy 16759, vuelta: 51, contador: 452
+hola soy 16759, vuelta: 52, contador: 453
+hola soy 16759, vuelta: 53, contador: 454
+hola soy 16759, vuelta: 54, contador: 455
+hola soy 16759, vuelta: 55, contador: 456
+hola soy 16759, vuelta: 56, contador: 457
+hola soy 16759, vuelta: 57, contador: 458
+hola soy 16759, vuelta: 58, contador: 459
+hola soy 16759, vuelta: 59, contador: 460
+hola soy 16759, vuelta: 60, contador: 461
+hola soy 16759, vuelta: 61, contador: 462
+hola soy 16759, vuelta: 62, contador: 463
+hola soy 16759, vuelta: 63, contador: 464
+hola soy 16759, vuelta: 64, contador: 465
+hola soy 16759, vuelta: 65, contador: 466
+hola soy 16759, vuelta: 66, contador: 467
+hola soy 16759, vuelta: 67, contador: 468
+hola soy 16759, vuelta: 68, contador: 469
+hola soy 16759, vuelta: 69, contador: 470
+hola soy 16759, vuelta: 70, contador: 471
+hola soy 16759, vuelta: 71, contador: 472
+hola soy 16759, vuelta: 72, contador: 473
+hola soy 16759, vuelta: 73, contador: 474
+hola soy 16759, vuelta: 74, contador: 475
+hola soy 16759, vuelta: 75, contador: 476
+hola soy 16759, vuelta: 76, contador: 477
+hola soy 16759, vuelta: 77, contador: 478
+hola soy 16759, vuelta: 78, contador: 479
+hola soy 16759, vuelta: 79, contador: 480
+hola soy 16759, vuelta: 80, contador: 481
+hola soy 16759, vuelta: 81, contador: 482
+hola soy 16759, vuelta: 82, contador: 483
+hola soy 16759, vuelta: 83, contador: 484
+hola soy 16759, vuelta: 84, contador: 485
+hola soy 16759, vuelta: 85, contador: 486
+hola soy 16759, vuelta: 86, contador: 487
+hola soy 16759, vuelta: 87, contador: 488
+hola soy 16759, vuelta: 88, contador: 489
+hola soy 16759, vuelta: 89, contador: 490
+hola soy 16759, vuelta: 90, contador: 491
+hola soy 16759, vuelta: 91, contador: 492
+hola soy 16759, vuelta: 92, contador: 493
+hola soy 16759, vuelta: 93, contador: 494
+hola soy 16759, vuelta: 94, contador: 495
+hola soy 16759, vuelta: 95, contador: 496
+hola soy 16759, vuelta: 96, contador: 497
+hola soy 16759, vuelta: 97, contador: 498
+hola soy 16759, vuelta: 98, contador: 499
+hola soy 16759, vuelta: 99, contador: 500
+hola soy 16760, vuelta: 0, contador: 501
+hola soy 16760, vuelta: 1, contador: 502
+hola soy 16760, vuelta: 2, contador: 503
+hola soy 16760, vuelta: 3, contador: 504
+hola soy 16760, vuelta: 4, contador: 505
+hola soy 16760, vuelta: 5, contador: 506
+hola soy 16760, vuelta: 6, contador: 507
+hola soy 16760, vuelta: 7, contador: 508
+hola soy 16760, vuelta: 8, contador: 509
+hola soy 16760, vuelta: 9, contador: 510
+hola soy 16760, vuelta: 10, contador: 511
+hola soy 16760, vuelta: 11, contador: 512
+hola soy 16760, vuelta: 12, contador: 513
+hola soy 16760, vuelta: 13, contador: 514
+hola soy 16760, vuelta: 14, contador: 515
+hola soy 16760, vuelta: 15, contador: 516
+hola soy 16760, vuelta: 16, contador: 517
+hola soy 16760, vuelta: 17, contador: 518
+hola soy 16760, vuelta: 18, contador: 519
+hola soy 16760, vuelta: 19, contador: 520
+hola soy 16760, vuelta: 20, contador: 521
+hola soy 16760, vuelta: 21, contador: 522
+hola soy 16760, vuelta: 22, contador: 523
+hola soy 16760, vuelta: 23, contador: 524
+hola soy 16760, vuelta: 24, contador: 525
+hola soy 16760, vuelta: 25, contador: 526
+hola soy 16760, vuelta: 26, contador: 527
+hola soy 16760, vuelta: 27, contador: 528
+hola soy 16760, vuelta: 28, contador: 529
+hola soy 16760, vuelta: 29, contador: 530
+hola soy 16760, vuelta: 30, contador: 531
+hola soy 16760, vuelta: 31, contador: 532
+hola soy 16760, vuelta: 32, contador: 533
+hola soy 16760, vuelta: 33, contador: 534
+hola soy 16760, vuelta: 34, contador: 535
+hola soy 16760, vuelta: 35, contador: 536
+hola soy 16760, vuelta: 36, contador: 537
+hola soy 16760, vuelta: 37, contador: 538
+hola soy 16760, vuelta: 38, contador: 539
+hola soy 16760, vuelta: 39, contador: 540
+hola soy 16760, vuelta: 40, contador: 541
+hola soy 16760, vuelta: 41, contador: 542
+hola soy 16760, vuelta: 42, contador: 543
+hola soy 16760, vuelta: 43, contador: 544
+hola soy 16760, vuelta: 44, contador: 545
+hola soy 16760, vuelta: 45, contador: 546
+hola soy 16760, vuelta: 46, contador: 547
+hola soy 16760, vuelta: 47, contador: 548
+hola soy 16760, vuelta: 48, contador: 549
+hola soy 16760, vuelta: 49, contador: 550
+hola soy 16760, vuelta: 50, contador: 551
+hola soy 16760, vuelta: 51, contador: 552
+hola soy 16760, vuelta: 52, contador: 553
+hola soy 16760, vuelta: 53, contador: 554
+hola soy 16760, vuelta: 54, contador: 555
+hola soy 16760, vuelta: 55, contador: 556
+hola soy 16760, vuelta: 56, contador: 557
+hola soy 16760, vuelta: 57, contador: 558
+hola soy 16760, vuelta: 58, contador: 559
+hola soy 16760, vuelta: 59, contador: 560
+hola soy 16760, vuelta: 60, contador: 561
+hola soy 16760, vuelta: 61, contador: 562
+hola soy 16760, vuelta: 62, contador: 563
+hola soy 16760, vuelta: 63, contador: 564
+hola soy 16760, vuelta: 64, contador: 565
+hola soy 16760, vuelta: 65, contador: 566
+hola soy 16760, vuelta: 66, contador: 567
+hola soy 16760, vuelta: 67, contador: 568
+hola soy 16760, vuelta: 68, contador: 569
+hola soy 16760, vuelta: 69, contador: 570
+hola soy 16760, vuelta: 70, contador: 571
+hola soy 16760, vuelta: 71, contador: 572
+hola soy 16760, vuelta: 72, contador: 573
+hola soy 16760, vuelta: 73, contador: 574
+hola soy 16760, vuelta: 74, contador: 575
+hola soy 16760, vuelta: 75, contador: 576
+hola soy 16760, vuelta: 76, contador: 577
+hola soy 16760, vuelta: 77, contador: 578
+hola soy 16760, vuelta: 78, contador: 579
+hola soy 16760, vuelta: 79, contador: 580
+hola soy 16760, vuelta: 80, contador: 581
+hola soy 16760, vuelta: 81, contador: 582
+hola soy 16760, vuelta: 82, contador: 583
+hola soy 16760, vuelta: 83, contador: 584
+hola soy 16760, vuelta: 84, contador: 585
+hola soy 16760, vuelta: 85, contador: 586
+hola soy 16760, vuelta: 86, contador: 587
+hola soy 16760, vuelta: 87, contador: 588
+hola soy 16760, vuelta: 88, contador: 589
+hola soy 16760, vuelta: 89, contador: 590
+hola soy 16760, vuelta: 90, contador: 591
+hola soy 16760, vuelta: 91, contador: 592
+hola soy 16760, vuelta: 92, contador: 593
+hola soy 16760, vuelta: 93, contador: 594
+hola soy 16760, vuelta: 94, contador: 595
+hola soy 16760, vuelta: 95, contador: 596
+hola soy 16760, vuelta: 96, contador: 597
+hola soy 16760, vuelta: 97, contador: 598
+hola soy 16760, vuelta: 98, contador: 599
+hola soy 16760, vuelta: 99, contador: 600
+hola soy 16761, vuelta: 0, contador: 601
+hola soy 16761, vuelta: 1, contador: 602
+hola soy 16761, vuelta: 2, contador: 603
+hola soy 16761, vuelta: 3, contador: 604
+hola soy 16761, vuelta: 4, contador: 605
+hola soy 16761, vuelta: 5, contador: 606
+hola soy 16761, vuelta: 6, contador: 607
+hola soy 16761, vuelta: 7, contador: 608
+hola soy 16761, vuelta: 8, contador: 609
+hola soy 16761, vuelta: 9, contador: 610
+hola soy 16761, vuelta: 10, contador: 611
+hola soy 16761, vuelta: 11, contador: 612
+hola soy 16761, vuelta: 12, contador: 613
+hola soy 16761, vuelta: 13, contador: 614
+hola soy 16761, vuelta: 14, contador: 615
+hola soy 16761, vuelta: 15, contador: 616
+hola soy 16761, vuelta: 16, contador: 617
+hola soy 16761, vuelta: 17, contador: 618
+hola soy 16761, vuelta: 18, contador: 619
+hola soy 16761, vuelta: 19, contador: 620
+hola soy 16761, vuelta: 20, contador: 621
+hola soy 16761, vuelta: 21, contador: 622
+hola soy 16761, vuelta: 22, contador: 623
+hola soy 16761, vuelta: 23, contador: 624
+hola soy 16761, vuelta: 24, contador: 625
+hola soy 16761, vuelta: 25, contador: 626
+hola soy 16761, vuelta: 26, contador: 627
+hola soy 16761, vuelta: 27, contador: 628
+hola soy 16761, vuelta: 28, contador: 629
+hola soy 16761, vuelta: 29, contador: 630
+hola soy 16761, vuelta: 30, contador: 631
+hola soy 16761, vuelta: 31, contador: 632
+hola soy 16761, vuelta: 32, contador: 633
+hola soy 16761, vuelta: 33, contador: 634
+hola soy 16761, vuelta: 34, contador: 635
+hola soy 16761, vuelta: 35, contador: 636
+hola soy 16761, vuelta: 36, contador: 637
+hola soy 16761, vuelta: 37, contador: 638
+hola soy 16761, vuelta: 38, contador: 639
+hola soy 16761, vuelta: 39, contador: 640
+hola soy 16761, vuelta: 40, contador: 641
+hola soy 16761, vuelta: 41, contador: 642
+hola soy 16761, vuelta: 42, contador: 643
+hola soy 16761, vuelta: 43, contador: 644
+hola soy 16761, vuelta: 44, contador: 645
+hola soy 16761, vuelta: 45, contador: 646
+hola soy 16761, vuelta: 46, contador: 647
+hola soy 16761, vuelta: 47, contador: 648
+hola soy 16761, vuelta: 48, contador: 649
+hola soy 16761, vuelta: 49, contador: 650
+hola soy 16761, vuelta: 50, contador: 651
+hola soy 16761, vuelta: 51, contador: 652
+hola soy 16761, vuelta: 52, contador: 653
+hola soy 16761, vuelta: 53, contador: 654
+hola soy 16761, vuelta: 54, contador: 655
+hola soy 16761, vuelta: 55, contador: 656
+hola soy 16761, vuelta: 56, contador: 657
+hola soy 16761, vuelta: 57, contador: 658
+hola soy 16761, vuelta: 58, contador: 659
+hola soy 16761, vuelta: 59, contador: 660
+hola soy 16761, vuelta: 60, contador: 661
+hola soy 16761, vuelta: 61, contador: 662
+hola soy 16761, vuelta: 62, contador: 663
+hola soy 16761, vuelta: 63, contador: 664
+hola soy 16761, vuelta: 64, contador: 665
+hola soy 16761, vuelta: 65, contador: 666
+hola soy 16761, vuelta: 66, contador: 667
+hola soy 16761, vuelta: 67, contador: 668
+hola soy 16761, vuelta: 68, contador: 669
+hola soy 16761, vuelta: 69, contador: 670
+hola soy 16761, vuelta: 70, contador: 671
+hola soy 16761, vuelta: 71, contador: 672
+hola soy 16761, vuelta: 72, contador: 673
+hola soy 16761, vuelta: 73, contador: 674
+hola soy 16761, vuelta: 74, contador: 675
+hola soy 16761, vuelta: 75, contador: 676
+hola soy 16761, vuelta: 76, contador: 677
+hola soy 16761, vuelta: 77, contador: 678
+hola soy 16761, vuelta: 78, contador: 679
+hola soy 16761, vuelta: 79, contador: 680
+hola soy 16761, vuelta: 80, contador: 681
+hola soy 16761, vuelta: 81, contador: 682
+hola soy 16761, vuelta: 82, contador: 683
+hola soy 16761, vuelta: 83, contador: 684
+hola soy 16761, vuelta: 84, contador: 685
+hola soy 16761, vuelta: 85, contador: 686
+hola soy 16761, vuelta: 86, contador: 687
+hola soy 16761, vuelta: 87, contador: 688
+hola soy 16761, vuelta: 88, contador: 689
+hola soy 16761, vuelta: 89, contador: 690
+hola soy 16761, vuelta: 90, contador: 691
+hola soy 16761, vuelta: 91, contador: 692
+hola soy 16761, vuelta: 92, contador: 693
+hola soy 16761, vuelta: 93, contador: 694
+hola soy 16761, vuelta: 94, contador: 695
+hola soy 16761, vuelta: 95, contador: 696
+hola soy 16761, vuelta: 96, contador: 697
+hola soy 16761, vuelta: 97, contador: 698
+hola soy 16761, vuelta: 98, contador: 699
+hola soy 16761, vuelta: 99, contador: 700
+hola soy 16762, vuelta: 0, contador: 701
+hola soy 16762, vuelta: 1, contador: 702
+hola soy 16762, vuelta: 2, contador: 703
+hola soy 16762, vuelta: 3, contador: 704
+hola soy 16762, vuelta: 4, contador: 705
+hola soy 16762, vuelta: 5, contador: 706
+hola soy 16762, vuelta: 6, contador: 707
+hola soy 16762, vuelta: 7, contador: 708
+hola soy 16762, vuelta: 8, contador: 709
+hola soy 16762, vuelta: 9, contador: 710
+hola soy 16762, vuelta: 10, contador: 711
+hola soy 16762, vuelta: 11, contador: 712
+hola soy 16762, vuelta: 12, contador: 713
+hola soy 16762, vuelta: 13, contador: 714
+hola soy 16762, vuelta: 14, contador: 715
+hola soy 16762, vuelta: 15, contador: 716
+hola soy 16762, vuelta: 16, contador: 717
+hola soy 16762, vuelta: 17, contador: 718
+hola soy 16762, vuelta: 18, contador: 719
+hola soy 16762, vuelta: 19, contador: 720
+hola soy 16762, vuelta: 20, contador: 721
+hola soy 16762, vuelta: 21, contador: 722
+hola soy 16762, vuelta: 22, contador: 723
+hola soy 16762, vuelta: 23, contador: 724
+hola soy 16762, vuelta: 24, contador: 725
+hola soy 16762, vuelta: 25, contador: 726
+hola soy 16762, vuelta: 26, contador: 727
+hola soy 16762, vuelta: 27, contador: 728
+hola soy 16762, vuelta: 28, contador: 729
+hola soy 16762, vuelta: 29, contador: 730
+hola soy 16762, vuelta: 30, contador: 731
+hola soy 16762, vuelta: 31, contador: 732
+hola soy 16762, vuelta: 32, contador: 733
+hola soy 16762, vuelta: 33, contador: 734
+hola soy 16762, vuelta: 34, contador: 735
+hola soy 16762, vuelta: 35, contador: 736
+hola soy 16762, vuelta: 36, contador: 737
+hola soy 16762, vuelta: 37, contador: 738
+hola soy 16762, vuelta: 38, contador: 739
+hola soy 16762, vuelta: 39, contador: 740
+hola soy 16762, vuelta: 40, contador: 741
+hola soy 16762, vuelta: 41, contador: 742
+hola soy 16762, vuelta: 42, contador: 743
+hola soy 16762, vuelta: 43, contador: 744
+hola soy 16762, vuelta: 44, contador: 745
+hola soy 16762, vuelta: 45, contador: 746
+hola soy 16762, vuelta: 46, contador: 747
+hola soy 16762, vuelta: 47, contador: 748
+hola soy 16762, vuelta: 48, contador: 749
+hola soy 16762, vuelta: 49, contador: 750
+hola soy 16762, vuelta: 50, contador: 751
+hola soy 16762, vuelta: 51, contador: 752
+hola soy 16762, vuelta: 52, contador: 753
+hola soy 16762, vuelta: 53, contador: 754
+hola soy 16762, vuelta: 54, contador: 755
+hola soy 16762, vuelta: 55, contador: 756
+hola soy 16762, vuelta: 56, contador: 757
+hola soy 16762, vuelta: 57, contador: 758
+hola soy 16762, vuelta: 58, contador: 759
+hola soy 16762, vuelta: 59, contador: 760
+hola soy 16762, vuelta: 60, contador: 761
+hola soy 16762, vuelta: 61, contador: 762
+hola soy 16762, vuelta: 62, contador: 763
+hola soy 16762, vuelta: 63, contador: 764
+hola soy 16762, vuelta: 64, contador: 765
+hola soy 16762, vuelta: 65, contador: 766
+hola soy 16762, vuelta: 66, contador: 767
+hola soy 16762, vuelta: 67, contador: 768
+hola soy 16762, vuelta: 68, contador: 769
+hola soy 16762, vuelta: 69, contador: 770
+hola soy 16762, vuelta: 70, contador: 771
+hola soy 16762, vuelta: 71, contador: 772
+hola soy 16762, vuelta: 72, contador: 773
+hola soy 16762, vuelta: 73, contador: 774
+hola soy 16762, vuelta: 74, contador: 775
+hola soy 16762, vuelta: 75, contador: 776
+hola soy 16762, vuelta: 76, contador: 777
+hola soy 16762, vuelta: 77, contador: 778
+hola soy 16762, vuelta: 78, contador: 779
+hola soy 16762, vuelta: 79, contador: 780
+hola soy 16762, vuelta: 80, contador: 781
+hola soy 16762, vuelta: 81, contador: 782
+hola soy 16762, vuelta: 82, contador: 783
+hola soy 16762, vuelta: 83, contador: 784
+hola soy 16762, vuelta: 84, contador: 785
+hola soy 16762, vuelta: 85, contador: 786
+hola soy 16762, vuelta: 86, contador: 787
+hola soy 16762, vuelta: 87, contador: 788
+hola soy 16762, vuelta: 88, contador: 789
+hola soy 16762, vuelta: 89, contador: 790
+hola soy 16762, vuelta: 90, contador: 791
+hola soy 16762, vuelta: 91, contador: 792
+hola soy 16762, vuelta: 92, contador: 793
+hola soy 16762, vuelta: 93, contador: 794
+hola soy 16762, vuelta: 94, contador: 795
+hola soy 16762, vuelta: 95, contador: 796
+hola soy 16762, vuelta: 96, contador: 797
+hola soy 16762, vuelta: 97, contador: 798
+hola soy 16762, vuelta: 98, contador: 799
+hola soy 16762, vuelta: 99, contador: 800
+adios
+Valor final del contador 800
+fin
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git [K[K[K[Kgit add 0_procesos.py
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 0_procesos.py[C[C[C[K[Ktxt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 0_procesos.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_proc[1Pesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C_proce[1Psos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C _procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C1_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[Cpro[1Pcesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add 1_procesos.txt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 1_procesos.txt[K[K[Kpy
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 1_procesos.py[Ctxt[1Ppy[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1_proc[1Pesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C 1_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C_proc[1Pesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C2_procesos.py[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add 2_procesos.py
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 2_procesos.py[K[Ktxt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 2_procesos.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_proc[1Pesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C3_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[K[K[Kpy
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 3_procesos.py[K[Ktxt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 3_procesos.txt[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_proc[1Pesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C4_procesos.txt[A]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[K[K[Kpy
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git add 4_procesos.py[K[Ktxt
+[?2004l[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ git push
+[?2004lEverything up-to-date
+[?2004h]0;alumno@aula403: ~/Descargas/practicas-prpa/multiprocessing[01;32malumno@aula403[00m:[01;34m~/Descargas/practicas-prpa/multiprocessing[00m$ [?2004l
+exit
+
+Script done on 2023-02-09 10:30:55+01:00 [COMMAND_EXIT_CODE="0"]

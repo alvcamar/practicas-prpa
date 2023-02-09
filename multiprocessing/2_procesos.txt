@@ -1,0 +1,17 @@
+fin
+adios
+hola soy ana_2, 16639, True, vuelta 0
+hola soy ana_2, 16639, True, vuelta 1
+hola soy ana_2, 16639, True, vuelta 2
+hola soy ana_2, 16639, True, vuelta 3
+hola soy ana_2, 16639, True, vuelta 4
+hola soy ana_0, 16637, True, vuelta 0
+hola soy ana_0, 16637, True, vuelta 1
+hola soy ana_0, 16637, True, vuelta 2
+hola soy ana_0, 16637, True, vuelta 3
+hola soy ana_0, 16637, True, vuelta 4
+hola soy ana_1, 16638, True, vuelta 0
+hola soy ana_1, 16638, True, vuelta 1
+hola soy ana_1, 16638, True, vuelta 2
+hola soy ana_1, 16638, True, vuelta 3
+hola soy ana_1, 16638, True, vuelta 4
